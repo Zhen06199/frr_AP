@@ -23,3 +23,12 @@ Follow these steps to set up your environment:
    Run the following command to create a bridge:
    ```bash
    sudo brctl addbr br0
+4. **Connect the Ethernet interface to the bridge
+   Use this command to add your Ethernet interface to the bridge:
+   ```bash
+   sudo brctl addif br0 ens0p25
+5. **Add a route to the bridge
+   Finally, add the route into the bridge using::
+   ```bash
+   sudo ip route add 172.22.228.0/24 dev br0
+
