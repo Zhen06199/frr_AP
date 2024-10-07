@@ -1,13 +1,25 @@
-# Simple OSPF lab using FRR
+# Introduction
+This topology integrates an Access Point (AP) into the original FRRouting (FRR) topology. The AP is connected as follows:
 
-This lab example consists of three FRR routers connected in a ring topology. Each router has one PC connected to it.
+**AP --> enp0s25 --> br0 --> router8:eth3**
 
-This is also an example of how to pre-configure lab nodes on "linux" node types in Containerlab.
+# AP Configuration
+- **SSID**: Zee123  
+- **Password**: Cisco123  
+- **IP Address**: 172.22.228.244/24  
 
-To start this lab, run the *run.sh* script, which will run the containerlab deploy commands, and then configure the PC interfaces.
+# Preparation Steps
+Follow these steps to set up your environment:
 
-The lab configuration is documented in detail at: https://www.brianlinkletter.com/2021/05/use-containerlab-to-emulate-open-source-routers/
+1. **Connect the AP**  
+   Connect the AP's switch side to your workstation's Ethernet interface.
 
-# Add images
-run *topo.sh*
-# frr_AP
+2. **Connect your client**  
+   Connect your client device (laptop, mobile phone) to the SSID. Manually set the IP address:
+   - **IP Address**: 172.22.228.21/24  
+   - **Gateway**: 172.22.228.1  
+
+3. **Create a bridge on your host laptop**  
+   Run the following command to create a bridge:
+   ```bash
+   sudo brctl addbr br0
