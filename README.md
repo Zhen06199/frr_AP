@@ -23,12 +23,20 @@ Follow these steps to set up your environment:
    Run the following command to create a bridge:
    ```bash
    sudo brctl addbr br0
-4. **Connect the Ethernet interface to the bridge
+4. **Connect the Ethernet interface to the bridge**
    Use this command to add your Ethernet interface to the bridge:
    ```bash
    sudo brctl addif br0 ens0p25
-5. **Add a route to the bridge
+5. **Add a route to the bridge**
    Finally, add the route into the bridge using::
    ```bash
    sudo ip route add 172.22.228.0/24 dev br0
 
+# Deploy TOPO
+run the file topo.sh. it will pull the images and build the topology by container lab
+
+# Attension
+Due to my fixed AP configuration, I connected the eth3 port of router8 to the AP, which required changing its IP address to ensure they are on the same subnet. I also updated the BGP configuration on router2(BGP famaly network), client16 and edge server4(router ip).
+
+# Check
+If everything goes smoothly, devices such as computers or smartphones should be able to connect to the AP, can ping client16 and edge server4 and recieve respond. Additionally, client16 and edge server4 should be able to ping the mobile devices or computers, although responses may not always be received.
