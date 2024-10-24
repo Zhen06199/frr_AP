@@ -35,7 +35,7 @@ Follow these steps to set up your environment:
 # Deploy TOPO
 run the file topo.sh. it will pull the images and build the topology by container lab
 
-# Attension
+# Attention
 Due to my fixed AP configuration, I connected the eth3 port of router8 to the AP, which required changing its IP address to ensure they are on the same subnet. I also updated the BGP configuration on router2(BGP famaly network), client16 and edge server4(router ip).
 
 # Check
