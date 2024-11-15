@@ -38,5 +38,7 @@ run the file topo.sh. it will pull the images and build the topology by containe
 # Attention
 Due to my fixed AP configuration, I connected the eth3 port of router8 to the AP, which required changing its IP address to ensure they are on the same subnet. I also updated the BGP configuration on router2(BGP famaly network), client16 and edge server4(router ip).
 
+Ceos version： I found the ceos version maybe to low and can not deploy in some device. so if you can not deploy the topo, you can try to replace the ceos with a higher version.
+
 # Check
 If everything goes smoothly, devices such as computers or smartphones should be able to connect to the AP, can ping client16 and edge server4 and recieve respond. Additionally, client16 and edge server4 should be able to ping the mobile devices or computers, although responses may not always be received.
